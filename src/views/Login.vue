@@ -20,7 +20,7 @@
 
     <!-- Second grid -->
     <div>
-      <div class="md:mt-52 mt-32 md:ml-[18%] ml-[10%]">
+      <div class="md:mt-52 mt-32 md:ml-[8%] ml-[10%]">
         <h1 class="text-5xl font-bold">{{ introText }}</h1>
         <p class="mt-4">{{ accountCreationText }}
           <span class="text-blue-600 font-medium"><RouterLink to="/signup">Sign up</RouterLink></span>
@@ -46,7 +46,7 @@
             <p class="text-blue-600 font-medium">Forgot password?</p>
           </div>
 
-          <Button title="Login"/>
+          <Button buttonText="Login"/>
         </form>
       </div>
     </div>

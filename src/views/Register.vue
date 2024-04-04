@@ -7,6 +7,8 @@
 /**
  * Placeholders
 */
+  const firstNameText = "FIRST NAME"
+  const lastNameText = "LAST NAME"
   const introText = "Create an Account"
   const email = "EMAIL"
   const password = "PASSWORD"
@@ -17,18 +19,28 @@
 
 <template>
   <div class="grid md:grid-cols-2 grid-cols-1">
-    <div class="bg-red-600 md:h-[100vh] h-[60vh]">Hi</div>
+    <div class="bg-red-600 md:h-[100vh] h-[60vh] overflow-auto">Hi</div>
 
     <!-- Second grid -->
     <div>
-      <div class="md:mt-44 mt-32 md:ml-[18%] ml-[10%]">
+      <div class="md:mt-16 mt-8 md:ml-[18%] ml-[8%] md:mx-0 mx-4">
         <h1 class="text-5xl font-bold">{{ introText }}</h1>
         
 
         <form class="mt-8 w-[32rem]">
           <div class="flex flex-col">
+            <label class="text-blue-600 text-xs font-medium mb-2">{{ firstNameText }}</label>
+            <input required type="text" class="p-3 px-4 w-[100%] border-2 border-gray-300 rounded-md mb-4" placeholder="Enter your first name"/>
+          </div>
+
+          <div class="flex flex-col">
+            <label class="text-blue-600 text-xs font-medium mb-2">{{ lastNameText }}</label>
+            <input required type="text" class="p-3 px-4 w-[100%] border-2 border-gray-300 rounded-md mb-4" placeholder="Enter your last name"/>
+          </div>
+
+          <div class="flex flex-col">
             <label class="text-blue-600 text-xs font-medium mb-2">{{ email }}</label>
-            <input required type="text" class="p-3 px-4 w-[100%] border-2 border-gray-300 rounded-md mb-4" placeholder="Enter your Email"/>
+            <input required type="text" class="p-3 px-4 w-[100%] border-2 border-gray-300 rounded-md mb-4" placeholder="Enter your email"/>
           </div>
 
           <div class="flex flex-col">
@@ -38,7 +50,7 @@
           
           <div class="flex flex-col">
             <label class="text-blue-600 text-xs font-medium mb-2">{{ confirmPassword }}</label>
-            <input required type="text" class="p-3 px-4 mb-4 w-[100%] border-2 border-gray-300 rounded-md" placeholder="Enter your password"/>
+            <input required type="text" class="p-3 px-4 mb-4 w-[100%] border-2 border-gray-300 rounded-md" placeholder="Confirm your password"/>
           </div>
 
           <div class="flex flex-row justify-between">
@@ -55,7 +67,7 @@
             </p>
           </div>
 
-          <Button title="Submit"/>
+          <Button buttonText="Submit"/>
         </form>
       </div>
     </div>
