@@ -16,11 +16,13 @@
 
 <template>
   <div class="grid md:grid-cols-2 grid-cols-1">
-    <div class="bg-red-600 md:h-[100vh] h-[60vh]">Hi</div>
+    <div class="bg-red-600 md:h-[100vh] h-[60vh] w-[75%]">
+      <img class="bg-cover h-full" src="../assets/login_background.jpg" alt="">
+    </div>
 
     <!-- Second grid -->
     <div>
-      <div class="md:mt-52 mt-32 md:ml-[8%] ml-[10%]">
+      <div class="md:mt-52 mt-32">
         <h1 class="text-5xl font-bold">{{ introText }}</h1>
         <p class="mt-4">{{ accountCreationText }}
           <span class="text-blue-600 font-medium"><RouterLink to="/signup">Sign up</RouterLink></span>
