@@ -5,44 +5,32 @@
   import Button from '@/components/Button.vue'
 
 /**
-   * 
+   * Texts
 */
-  const introText = "Ghana Revenue Authority E-VAT"
-  const introDescription = "Please sign-in to your account"
-  const email = "EMAIL"
-  const password = "PASSWORD"
-  const accountCreationText = "Don't have an Account?"
-  const rememberMeText = "Keep me signed in on this device"
+  const introText = "EVAT Suite"
+  const introDescription = "Your productivity, all in one place."
+  
 </script>
 
 <template>
-  <div class="grid md:grid-cols-4 grid-cols-1">
-    <div class="bg-red-600 md:h-[100vh] h-[60vh] col-span-3">
+  <div class="grid md:grid-cols-2 grid-cols-1">
+    <div class="bg-red-600 md:h-[100vh] h-[60vh]">
       <img class="bg-cover h-full" src="../assets/login_background.jpg" alt="">
     </div>
 
     <!-- Second grid -->
-    <div>
-      <div class="md:mt-[15rem] mt-32">
-      <center>
-        <h1 class="text-[#0501019c] text-center text-3xl lg:text-4xl mb-2">{{ introText }}</h1>
+    <div class="bg-black text-white">
+      <div class="md:mt-[17rem] mt-32">
+        <center>
+          <h1 class="text-5xl mb-2">{{ introText }}</h1>
+          <h1 class="text-2xl">{{ introDescription }}</h1>
 
-        <p class="text-gray-400 text-[#0501019c] mb-4">{{ introDescription }}</p>
+          <RouterLink to="/login">
+            <Button buttonText="Login"/>
+          </RouterLink>
+        </center>
 
-      </center>
 
-      <div class="mx-8">
-        <form>
-          <div class="grid grid-rows-1">
-            <label class="text-sm text-gray-400 font-thin" for="user_type">User Type</label>
-            <select class="border-2 rounded-md p-1 text-gray-400 font-thin" name="user-types" id="userType"> 
-              <option value="user_type">Select user type</option> 
-              <option value="taxpayer">Taxpayer</option> 
-              <option value="authority">Authority</option> 
-            </select>
-          </div>
-        </form>
-      </div>
         <!-- <p class="mt-4">{{ accountCreationText }}
           <span class="text-blue-600 font-medium"><RouterLink to="/signup">Sign up</RouterLink></span>
         </p> -->

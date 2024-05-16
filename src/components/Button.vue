@@ -7,12 +7,17 @@
 </template>
 
 <script setup>
+/**
+ * 
+*/
+    const buttonLocation = "{{ props.buttonText.location }}";
     const props = defineProps({
         buttonText: {
             type: String,
             required: true,
-            default: "Unknown Button"
-        },
+            default: "Unknown Button",
+            location: String
+        }
     })
 </script>
 
