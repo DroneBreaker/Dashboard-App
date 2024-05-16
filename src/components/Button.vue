@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button class="bg-blue-600 mt-4 p-3 px-4 rounded-md text-white text-sm w-[100%] mb-4">
+        <button class="bg-blue-600 mt-4 p-3 px-4 rounded-md text-white w-40 mb-4 font-bold">
             {{ props.buttonText }}
         </button>
     </div>

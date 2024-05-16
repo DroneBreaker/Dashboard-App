@@ -7,7 +7,8 @@
 /**
    * 
 */
-  const introText = "Login to Apex"
+  const introText = "EVAT Suite"
+  const introDescription = "Your productivity, all in one place."
   const email = "EMAIL"
   const password = "PASSWORD"
   const accountCreationText = "Don't have an Account?"
@@ -16,19 +17,26 @@
 
 <template>
   <div class="grid md:grid-cols-2 grid-cols-1">
-    <div class="bg-red-600 md:h-[100vh] h-[60vh] w-[75%]">
+    <div class="bg-red-600 md:h-[100vh] h-[60vh]">
       <img class="bg-cover h-full" src="../assets/login_background.jpg" alt="">
     </div>
 
     <!-- Second grid -->
-    <div>
-      <div class="md:mt-52 mt-32">
-        <h1 class="text-5xl font-bold">{{ introText }}</h1>
-        <p class="mt-4">{{ accountCreationText }}
-          <span class="text-blue-600 font-medium"><RouterLink to="/signup">Sign up</RouterLink></span>
-        </p>
+    <div class="bg-black text-white">
+      <div class="md:mt-[17rem] mt-32">
+        <center>
+          <h1 class="text-5xl mb-2">{{ introText }}</h1>
+          <h1 class="text-2xl">{{ introDescription }}</h1>
 
-        <form class="mt-8 w-[32rem]">
+          <Button buttonText="Login"/>
+        </center>
+
+
+        <!-- <p class="mt-4">{{ accountCreationText }}
+          <span class="text-blue-600 font-medium"><RouterLink to="/signup">Sign up</RouterLink></span>
+        </p> -->
+
+        <!-- <form class="mt-8 w-[32rem]">
           <div class="flex flex-col">
             <label class="text-blue-600 text-xs font-medium mb-2">{{ email }}</label>
             <input required type="text" class="p-3 px-4 w-[100%] border-2 border-gray-300 rounded-md mb-4" placeholder="Enter your Email"/>
@@ -49,7 +57,7 @@
           </div>
 
           <Button buttonText="Login"/>
-        </form>
+        </form> -->
       </div>
     </div>
   </div>
