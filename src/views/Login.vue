@@ -3,6 +3,10 @@
  * Imports
 */
   import Button from '@/components/Button.vue'
+  import TaxpayerLogin from '@/views/TaxpayerLogin.vue'
+  import AuthorityLogin from '@/views/AuthorityLogin.vue'
+  import { ref, h } from 'vue'
+
 
 /**
    * 
@@ -13,36 +17,63 @@
   const password = "PASSWORD"
   const accountCreationText = "Don't have an Account?"
   const rememberMeText = "Keep me signed in on this device"
+
+
+/**
+ * Render pages
+*/
+  const selectedPage = ref('login') // Initialize with a default page
+
+  // Your other setup logic here...
+  const handlePageChange = () => {
+  // Handle any additional logic if needed
+  // For now, let's just log the selected page
+    // console.log('Selected page:', selectedPage.value)
+    renderPage(newPage)
+    
+  }
+
+  const renderPage = (newPage) => {
+    switch (selectedPage.value) { 
+      case 'taxpayer':
+        return TaxpayerLogin
+      case 'authority':
+        return AuthorityLogin
+      // Add more cases for other pages...
+      default:
+        return 'PageNotFound' // Fallback for unknown pages
+    }
+  }
 </script>
 
 <template>
   <div class="grid md:grid-cols-4 grid-cols-1">
-    <div class="bg-red-600 md:h-[100vh] h-[60vh] col-span-3">
+    <div class="md:h-[100vh] h-[60vh] col-span-3">
       <img class="bg-cover h-full" src="../assets/login_background.jpg" alt="">
     </div>
 
     <!-- Second grid -->
     <div>
       <div class="md:mt-[15rem] mt-32">
-      <center>
         <h1 class="text-[#0501019c] text-center text-3xl lg:text-4xl mb-2">{{ introText }}</h1>
 
-        <p class="text-gray-400 text-[#0501019c] mb-4">{{ introDescription }}</p>
+        <p class="text-gray-400 mx-4 text-[#0501019c] mb-4">{{ introDescription }}</p>
 
-      </center>
-
-      <div class="mx-8">
-        <form>
+        <div class="mx-4">
           <div class="grid grid-rows-1">
-            <label class="text-sm text-gray-400 font-thin" for="user_type">User Type</label>
-            <select class="border-2 rounded-md p-1 text-gray-400 font-thin" name="user-types" id="userType"> 
-              <option value="user_type">Select user type</option> 
+            <label class="text-sm text-gray-400 font-thin mb-2" for="usertype">User Type</label>
+
+            <select 
+              class="border-2 rounded-md p-1 text-gray-400 font-thin" 
+              @change="handlePageChange" v-model="selectedPage"> 
+              <option :value="selectedPage">Select user type</option> 
               <option value="taxpayer">Taxpayer</option> 
               <option value="authority">Authority</option> 
             </select>
           </div>
-        </form>
-      </div>
+
+          <component :is="renderPage()" />
+        </div>
         <!-- <p class="mt-4">{{ accountCreationText }}
           <span class="text-blue-600 font-medium"><RouterLink to="/signup">Sign up</RouterLink></span>
         </p> -->
